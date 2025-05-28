@@ -1,0 +1,36 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function fn_validate() {
+		
+		let frmLogin=document.frmLogin;
+		
+		let user_id=frmLogin.user_id.trim();
+		let user_pw=frmLogin.user_pw.trim();
+		
+		if((user_id.length==0 || user_id=="") ||
+			(user_pw.length==0 || user_pw=="")){
+			alert("아이디와 비밀번호를 입력하세요");
+			return false;
+		} else {
+			return true;
+			/* frmLogin.method="post";
+			frmLogin.action="login6";
+			frmLogin.submit(); */
+		}
+		
+	}
+</script>
+
+</head>
+<body>
+	<form action="login6" method="post" name="frmLogin" onsubmit="return fn_validate()"> 
+		아이디:<input type="text" name="user_id"><br>
+		비밀번호:<input type="password" name="user_pw"> <br>
+		<input type="submit"  onClick="fn_validate()"  value="로그인">
+		<input type="reset" value="다시입력">	
+	</form>
+</body>
+</html>

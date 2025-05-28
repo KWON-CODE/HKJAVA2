@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+	function fn_validate() {
+		
+		let frmLogin=document.frmLogin;
+		
+		//중복이 되니 변수로 만들자
+		/* document.frmLogin.user_id;
+		document.frmLogin.user_pw;
+		document.frmLogin.user_addr; */
+		
+		let user_id=frmLogin.user_id.value;
+		let user_pw=frmLogin.user_pw.value;
+		
+		if((user_id.length==0 || user_id=="") ||
+			(user_pw.length==0 || user_pw=="")){
+			alert("아이디와 비밀번호를 입력하세요");
+			return false;
+		} else {
+			frmLogin.method="post";
+			frmLogin.action="login5";
+			frmLogin.submit();
+		}
+		
+		/* frmLogin.method="post";
+		frmLogin.action="login5";
+		frmLogin.submit(); */
+	}
+</script>
+
+</head>
+<body>
+	<form action="login5" method="post" name="frmLogin"> 
+		아이디:<input type="text" name="user_id"><br>
+		비밀번호:<input type="password" name="user_pw"> <br>
+		<input type="submit"  onClick="fn_validate()"  value="로그인">
+		<input type="reset" value="다시입력">	
+	</form>
+</body>
+</html>

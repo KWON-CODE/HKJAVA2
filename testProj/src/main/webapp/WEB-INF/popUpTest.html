@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+window.onload=pageLoad;
+
+function pageLoad() {
+	notShowPop=getCookvalue();
+	
+	window.open("popup.html","pop", "width:400,height=500");
+}
+
+function getCookValue(){
+	if(document.cookie!="") {
+		cookie=document.cookie.split(";");
+		for (let i=0;i<cookie.length;i++){
+			element=cookie[i].split("=");
+			value=element[0];
+			value=value.replace();
+		}
+	}
+}
+
+	function deleteCookie(){
+		document.cookie = "notShowPop"+ "false" +";path=/; expires=-1";
+	}
+
+	function setPopUpStart(obj) {
+	if(obj.checked==true) {
+		let expireDate= new Date();
+		exporeDate.setMonth(expireDate.getMonth+1);
+		document.cookie="notShowPop"+"true"+";path=/; expires=" +
+		expireDate.toGMTString();
+	}
+	}
+</script>
+</head>
+<body>
+ 알림팝업창입니다.
+ <br><br><br><br><br>
+ <form>
+ 	<input type="checkbox" onclick="setPopUpStart(this)"> 오늘은 더이상 팝업창을 띄우지 않는다.
+ 	<input type="button" value="쿠키삭제" onclick="deleteCookie()">
+ </form>
+</body>
+</html>
