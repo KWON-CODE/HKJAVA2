@@ -1,11 +1,13 @@
 package sec01.ex01;
 
+import java.sql.Date;
+
 public class MemberVO {
 	private String id;
 	private String pwd;
 	private String name;
 	private String email;
-	private String joinDate;
+	private Date joinDate;
 	
 	public MemberVO() {
 		System.out.println("생성자 메소드 호출...");
@@ -17,6 +19,14 @@ public class MemberVO {
 		this.pwd = pwd;
 		this.name = name;
 		this.email = email;
+	}
+
+	public MemberVO(String id, String pwd, String name, String email, Date joinDate) {
+		this.id = id;
+		this.pwd = pwd;
+		this.name = name;
+		this.email = email;
+		this.joinDate = joinDate;
 	}
 
 	public String getId() {
@@ -43,10 +53,10 @@ public class MemberVO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getJoinDate() {
+	public Date getJoinDate() {
 		return joinDate;
 	}
-	public void setJoinDate(String joinDate) {
+	public void setJoinDate(Date joinDate) {
 		this.joinDate = joinDate;
 	}
 	
