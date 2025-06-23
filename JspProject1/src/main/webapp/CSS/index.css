@@ -1,0 +1,245 @@
+@charset "utf-8";
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+
+    /* inherit 부모속성 적용 */
+
+}
+
+
+body {
+    font-size: 16px;
+    font-family: "나눔고딕", "Nanum gothic", sans-serif;
+    color: #333;
+}
+
+/* 헤더 */
+
+.header {
+    width: 100%;
+    height: 80px;
+    margin: 0 auto;
+    padding-left: 30px;
+    /* background-color: #ddd;  */
+
+}
+
+.header h1 {
+    float: left;
+    padding-top: 28px;
+    /* 90-34(이미지높이)=56/2=28 */
+    margin-right: 25px;
+
+}
+
+.header h2 {
+    float: left;
+    line-height: 80px;
+    font-size: 20px;
+}
+
+.header .menu {
+    float: right;
+    width: 1000px;
+}
+
+
+.header .menu li {
+    float: left;
+    margin-left: 40px;
+    line-height: 80px;
+    /* submenu 있을때 추가 */
+    width: 120px;
+
+}
+
+.header .menu li a:hover {
+    color: blue;
+}
+
+/* 게시판 관련*/
+
+/* 메인비주얼 */
+
+.section1 {
+    padding-top: 80px;
+    height: 654px;
+
+background-image: url(../img/pc-cover-main.jpg);
+background-repeat: no-repeat;
+background-position: center top; 
+    background: url(../img/pc-cover-main.jpg) no-repeat center top;
+    background-size: cover;
+    /* 박스를 꽉채운다 이미지가 잘린다 */
+}
+.section1 b {
+    display: block;
+    padding: 95px 0 15px;
+    color: #fff;
+    text-align: center;
+    font-size: 3em;
+}
+
+
+.section1>p {
+    color: #fff;
+    text-align: center;
+    padding-bottom: 75px;
+}
+
+
+.section1 .container {
+    width: 1140px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+
+.section1 .container .quick {
+    float: left;
+    width: 270px;
+    height: 270px;
+    background-color: white;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+
+
+.section1 .container .last {
+    margin-right: 0px;
+}
+
+.section1 .quick h3 {
+    margin: 55px 30px 30px 30px;
+    font-size: 28px;
+    background: url(../img/arrow.jpg) no-repeat right;
+    /* 주의: 앞에 background-repeat , background-position 등 주석처리할것 */
+}
+
+
+.section1 .quick p {
+    margin: 0 30px;
+    font-size: 18px;
+    letter-spacing: -1px;
+}
+
+
+/* 섹션2 */
+
+.section2 {
+    width: 1140px;
+    margin: 0 auto;
+}
+
+
+.section2>div {
+    float: left;
+    width: 480px;
+    padding: 80px 0;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.section2 p {
+    padding-right: 100px;
+}
+
+.section2 h3 {
+    font-size: 28px;
+    padding-bottom: 15px;
+}
+.section2 .intro1 {
+    background-image: url(../img/icon01.jpg);
+    margin-right: 180px;
+}
+
+.section2 .intro2 {
+    background-image: url(../img/icon02.jpg);
+}
+
+/* submenu 있을때 추가 */
+/* hover 시 높이 증가 */
+ 
+.header:hover {
+    height: 317px;
+}
+
+.submenu {
+    overflow: hidden;
+    height: 0;
+    width: 200px;
+    transition: max-height 0.5s ease;
+
+}
+
+.submenu li a {
+    display: block;
+    background-color: #999;
+    text-align: center;
+    line-height: 40px;
+    border-bottom: 1px solid #d19191;
+    color: #000;
+
+}
+
+.submenu li a:hover {
+    background-color: yellow;
+    color: pink;
+
+}
+
+.nav>li>a:hover+.submenu {
+    height: 164px;
+    width: 150px;
+} 
+
+aside {
+    position: fixed;
+    top:0;
+    right:-220px;
+    width: 220px;
+    height: 100%;
+    padding: 20px;
+    background: #fff;
+    border-right: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+aside #asidenav a{
+    display:block;
+    height:36px;
+    border:1px solid #ddd;
+    text-align: center;
+    margin-bottom: 5px;
+    line-height: 36px;
+}
+
+aside #asidenav a:hover {
+    background:#333;
+    color: #fff;
+}
+
+aside button{
+    display: block;
+    width: 52px;
+    height:132px;
+    position:absolute;
+    top:150px;
+    left:-52px;
+    background-color: #fff;
+    border:1px solid #ddd;
+    border-right:0;
+    cursor: pointer;
+}
